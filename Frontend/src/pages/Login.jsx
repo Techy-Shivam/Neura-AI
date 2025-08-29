@@ -20,7 +20,7 @@ async function handleSubmit(e) {
 
     try {
         const res = await axios.post(
-            "https://neura-ai-3.onrender.com//api/auth/login",
+            "https://neura-ai-3.onrender.com/api/auth/login",
             {
                 email: form.email,
                 password: form.password

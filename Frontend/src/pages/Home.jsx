@@ -48,7 +48,7 @@ const Home = () => {
     if (title) title = title.trim();
     if (!title) return
 
-    const response = await axios.post("https://neura-ai-3.onrender.com//api/chat", {
+    const response = await axios.post("https://neura-ai-3.onrender.com/api/chat", {
       title
     }, {
       withCredentials: true
@@ -61,7 +61,7 @@ const Home = () => {
   // Ensure at least one chat exists initially
   useEffect(() => {
 
-    axios.get("https://neura-ai-3.onrender.com//api/chat", { withCredentials: true })
+    axios.get("https://neura-ai-3.onrender.com/api/chat", { withCredentials: true })
       .then(response => {
         dispatch(setChats(response.data.chats.reverse()));
       })
@@ -119,7 +119,7 @@ const Home = () => {
 
   const getMessages = async (chatId) => {
 
-   const response = await axios.get(`https://neura-ai-3.onrender.com//api/chat/messages/${chatId}`, { 
+   const response = await axios.get(`https://neura-ai-3.onrender.com/api/chat/messages/${chatId}`, { 
   withCredentials: true 
 })
 
@@ -136,7 +136,7 @@ const Home = () => {
   if (!window.confirm("Are you sure you want to delete this chat?")) return;
 
   try {
-    await axios.delete(`https://neura-ai-3.onrender.com//api/chat/${chatId}`, { withCredentials: true });
+    await axios.delete(`https://neura-ai-3.onrender.com/api/chat/${chatId}`, { withCredentials: true });
     const updatedChats = chats.filter(c => c._id !== chatId);
     dispatch(setChats(updatedChats));
 

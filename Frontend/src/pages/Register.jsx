@@ -18,7 +18,7 @@ const Register = () => {
         setSubmitting(true);
         console.log(form);
 
-        axios.post("https://neura-ai-3.onrender.com//api/auth/register", {
+        axios.post("https://neura-ai-3.onrender.com/api/auth/register", {
             email: form.email,
             fullName: {
                 firstName: form.firstname,
